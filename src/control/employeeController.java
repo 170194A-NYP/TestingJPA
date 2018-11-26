@@ -7,6 +7,7 @@ import javax.faces.bean.ManagedBean;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.*;
 
 @ManagedBean
 public class employeeController {
@@ -22,7 +23,7 @@ public class employeeController {
         employee.setAge(person.getAge());
         employee.setEmail(person.getEmail());
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory(persistance_name);
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPATest");
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
 

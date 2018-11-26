@@ -14,9 +14,12 @@
    <h:form>
       Name : <h:inputText id="name" value="#{employee.name}" required="true" />
        <br/>
+       <br/>
       Age : <h:inputText id="age" value="#{employee.age}" required="true" />
        <br/>
+       <br/>
       Email : <h:inputText id="email" value="#{employee.email}" required="true" />
+       <br/>
        <br/>
       <h:commandButton value="Submit" action="#{employeeController.addEmployee(employee)}"/>
    </h:form>
