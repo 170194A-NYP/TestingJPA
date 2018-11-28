@@ -7,6 +7,12 @@
         <element id="directory" name="classes">
           <element id="module-output" name="TestingJPA" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="JPA 2.0-2.0" />
+          <element id="library" level="project" name="PrimeFaces-6.1" />
+          <element id="library" level="project" name="Hibernate 5.3.7-5.3.7" />
+          <element id="library" level="project" name="mysql:mysql-connector-java:5.1.14" />
+        </element>
       </element>
     </root>
   </artifact>
