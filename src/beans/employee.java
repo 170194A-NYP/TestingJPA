@@ -1,10 +1,11 @@
 package beans;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 
 @ManagedBean
-@SessionScoped
+@RequestScoped
 public class employee {
     private int id;
     private String name;

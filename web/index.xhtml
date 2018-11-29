@@ -7,21 +7,42 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
-   <title>JPA Test</title>
+    <title>JPA Test</title>
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{employeeController.loadEmployees()}"/>
+    </f:metadata>
 </h:head>
 <h:body>
-   <h1>Add Employee</h1>
-   <h:form>
-      Name : <h:inputText id="name" value="#{employee.name}" required="true" />
-       <br/>
-       <br/>
-      Age : <h:inputText id="age" value="#{employee.age}" required="true" />
-       <br/>
-       <br/>
-      Email : <h:inputText id="email" value="#{employee.email}" required="true" />
-       <br/>
-       <br/>
-      <h:commandButton value="Submit" action="#{employeeController.addEmployee(employee)}"/>
-   </h:form>
+    <h1>Current Employees</h1>
+    <h:form>
+        <ui:repeat value="#{employeeController.employees}" var="employeee">
+
+            ID : #{employeee.id} <br/>
+            Name : #{employeee.name} <br/>
+            Age : #{employeee.age} <br/>
+            Email : #{employeee.email} <br/>
+            <h:commandButton value="Delete" action="#{employeeController.deleteEmployee(employeee.id)}"/> <br/> <br/>
+            <br/>
+
+        </ui:repeat>
+    </h:form>
+
+    <h:form>
+        <h:commandButton value="Delete" action="#{employeeController.deleteEmployee(4)}"/>
+    </h:form>
+
+    <h1>Add Employee</h1>
+    <h:form>
+        Name : <h:inputText id="name" value="#{employee.name}" required="true"/>
+        <br/>
+        <br/>
+        Age : <h:inputText id="age" value="#{employee.age}" required="true"/>
+        <br/>
+        <br/>
+        Email : <h:inputText id="email" value="#{employee.email}" required="true"/>
+        <br/>
+        <br/>
+        <h:commandButton value="Submit" action="#{employeeController.addEmployee(employee)}"/>
+    </h:form>
 </h:body>
 </html>
